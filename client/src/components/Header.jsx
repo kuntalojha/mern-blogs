@@ -36,20 +36,20 @@ export default function Header() {
           <FaMoon />
         </Button>
 
-        <link to="/sign-in">
+        <Link to="/sign-in">
           <Button gradientDuoTone="purpleToBlue">Sign In</Button>
-        </link>
+        </Link>
         <NavbarToggle />
       </div>
       <Navbar.Collapse>
         <Navbar.Link active={path === "/"} as={"div"}>
-          <link to="/">Home</link>
+          <Link to="/">Home</Link>
         </Navbar.Link>
         <Navbar.Link active={path === "/about"} as={"div"}>
-          <link to="/about">About</link>
+          <Link to="/about">About</Link>
         </Navbar.Link>
         <Navbar.Link active={path === "/projects"} as={"div"}>
-          <link to="/projects">Projects</link>
+          <Link to="/projects">Projects</Link>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
