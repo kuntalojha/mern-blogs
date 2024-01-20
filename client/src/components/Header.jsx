@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Navbar, NavbarToggle, TextInput } from "flowbite-react";
+import { Button, Navbar, TextInput } from "flowbite-react";
 import { Link, useLocation } from "react-router-dom";
 
 import { AiOutlineSearch } from "react-icons/ai";
@@ -31,15 +31,15 @@ export default function Header() {
         <AiOutlineSearch />
       </Button>
 
-      <div className="flax gap-2 md:order-2">
+      <div className="flex gap-2 md:order-2">
         <Button className="w-12 h-10 hidden sm:inline" color="gray" pill>
           <FaMoon />
         </Button>
 
         <Link to="/sign-in">
-          <Button gradientDuoTone="purpleToBlue">Sign In</Button>
+          <Button gradientDuoTone="purpleToBlue" outline>Sign In</Button>
         </Link>
-        <NavbarToggle />
+        <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
         <Navbar.Link active={path === "/"} as={"div"}>
