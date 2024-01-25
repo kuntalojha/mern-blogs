@@ -13,12 +13,11 @@ export default function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Fix the typo here
     try {
-      const res = await fetch("http://127.0.0.1:5173/api/auth/signup", {
+      const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      
       const data = await res.json();
       // Handle the response data as needed
     } catch (error) {
@@ -44,11 +43,7 @@ export default function SignUp() {
         </div>
         {/* Right */}
         <div className="flex-1">
-          <form
-            className="flex flex-col gap-4"
-            onSubmit={handleSubmit}
-            method="POST"
-          >
+          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <div>
               <Label value="Your username" />
               <TextInput
