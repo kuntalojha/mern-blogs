@@ -106,7 +106,7 @@ Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests.
 
 License
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](https://github.com/kuntalojha/mern-blog?tab=MIT-1-ov-file#readme).
 
 Remember to replace placeholders like `your_mongodb_connection_string` and `your_jwt_secret_key` with your actual MongoDB connection string and a secure JWT secret key. Feel free to add more sections or details based on your project's specific requirements.
 
