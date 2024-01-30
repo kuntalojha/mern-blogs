@@ -76,38 +76,76 @@ npm install
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 ```
+
 5. Start the development server:
-```
-cd server
-npm start
-
-cd ../client
-npm start
 
 ```
-The application should now be running on http://localhost:3000.
+cd client
+npm start
+```
 
-Project Structure
+**The application should now be running on**<br>
+➜ Local: `http://localhost:5173/`<br>
+➜ Network: `http://(your ip address):5173/`<br>
+➜ press h + enter to show help
+
+```
+cd ../api
+npm start
+
+```
+
+Server is running on port 3000 `http://localhost:3000.`
+
+## Project Structure
 The project follows a standard MERN stack structure:
 
 ```
 mern-blog/
+|-- api/                # Backend (Node.js/Express) code
+  |-- controllers       # user & auth controller
+  |-- modules           # user model
+  |-- routes            # auth & user route
+  |-- utils             # error
+index.js
+
 |-- client/             # Frontend (React) code
-|-- api/             # Backend (Node.js/Express) code
+  |-- node_modules      # node modules are here
+  |-- public
+  |-- src/
+    |-- assets
+    |-- components      # Header,Footer,OAuth,ThemeProvider
+    |-- Pages           # About,Dashboard,Home,Project,SignIn,SignUp
+    |-- redux           # theme & user and store.js
+      |-- theme         # themeSlice.js file
+      |-- user          #  userSlice.js file
+      |-- store.js
+    |-- App.jsx
+    |-- ErrorBoundary.jsx
+    |-- firebase.js
+    |-- index.css
+    |-- main.jsx
 |-- README.md           # Project documentation
+|-- node_modules        # node modules are here
 |-- .gitignore          # Git ignore file
 
 ```
 
-Usage
+## Usage
+
 Describe how to use the application, including any additional setup or configurations needed.
 
-Contributing
+## Contributing
+
 Contributions are welcome! Feel free to open issues or submit pull requests.
 
-License
+- Remember to replace placeholders like `your_mongodb_connection_string` and `your_jwt_secret_key` with your actual MongoDB connection string and a secure JWT secret key. Feel free to add more sections or details based on your project's specific requirements.
+
+## License
+
 This project is licensed under the [MIT License](https://github.com/kuntalojha/mern-blog?tab=MIT-1-ov-file#readme).
 
-Remember to replace placeholders like `your_mongodb_connection_string` and `your_jwt_secret_key` with your actual MongoDB connection string and a secure JWT secret key. Feel free to add more sections or details based on your project's specific requirements.
+#### README MAKER
 
-[readme.so](https://readme.so/editor)
+1. [readme.so](https://readme.so/editor)
+2. [Make a README](https://www.makeareadme.com/)
