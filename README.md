@@ -91,7 +91,7 @@ npm start
 
 ```
 cd ../api
-npm start
+npm run dev
 
 ```
 
