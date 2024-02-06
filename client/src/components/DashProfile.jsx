@@ -20,7 +20,7 @@ export default function DashProfile() {
   const [imageFileUrl, setImgeFileUrl] = useState(null);
   const [imageFileUploadProgress, setImageFileUploadProgress] = useState(null);
   const [imageFileUploadError, setImageFileUploadError] = useState(null);
-  console.log(imageFileUploadProcess, imageFileUploadError);
+  // console.log(imageFileUploadProgress, imageFileUploadError);
   const filePickerRef = useRef();
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -49,7 +49,7 @@ export default function DashProfile() {
     //   }
     // }
     // console.log("uploding image...");
-
+    setImageFileUploadError(null);
     const storage = getStorage(app);
     const fileName = new Date().getTime() + imageFile.name;
     const storageRef = ref(storage, fileName);
@@ -64,12 +64,16 @@ export default function DashProfile() {
       (error) => {
         setImageFileUploadError(
           "Could not upload image (File must be less than 2MP)"
-        ),
-          () => {
-            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              setImgeFileUrl(downloadURL);
-            });
-          };
+        );
+        setImageFileUploadProgress(null);
+        setImgeFile(null);
+        setImgeFileUrl(null);
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setImgeFileUrl(downloadURL);
+          // console.log(downloadURL);
+        });
       }
     );
   };
@@ -96,16 +100,19 @@ export default function DashProfile() {
               value={imageFileUploadProgress || 0}
               text={`${imageFileUploadProgress}%`}
               strokeWidth={5}
-              style={{
+              styles={{
                 root: {
-                  with: "100%",
+                  width: "100%",
                   height: "100%",
                   position: "absolute",
                   top: 0,
                   left: 0,
                 },
                 path: {
-                  stroke: `rgba(62,152,199) ${imageFileUploadProgress / 100}`,
+                  stroke: `rgba(62,152,199)`,
+                },
+                trail: {
+                  stroke: "transparent",
                 },
               }}
             />
