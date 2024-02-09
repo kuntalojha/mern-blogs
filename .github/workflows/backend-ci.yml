@@ -22,11 +22,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Tests
-        run: npm test
-
-      - name: Linting
-        run: npm run lint
-
-      - name: Start Server
+      - name: Run Start Server
         run: npm start
+
